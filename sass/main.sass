@@ -1,0 +1,109 @@
+*
+    margin: 0px
+    padding: 0px
+
+.menu
+    color: white
+    background-color: red
+    width: 100%
+   
+
+$breakpoint-l: 1200px !default
+$breakpoint-m: 768px  !default
+$breakpoint-s: 480px  !default
+
+$grid-col-name: col   !default
+$grid-container-name: row !default
+
+$grid-l-name: l !default
+$grid-m-name: m !default
+$grid-s-name: s !default
+
+$grid-size: 4 !default
+
+$grid-gutter: 5px
+$grid-padding: 10px
+ 
+.#{$grid-container-name}
+    box-sizing: border-box
+    display: flex
+    flex-wrap: wrap
+    &--h-center
+        justify-content: center
+        
+    &--v-center
+        align-items: center
+        
+    &--dir-col
+        flex-direction: column
+        
+    &--dir-col-reverse
+        flex-direction: column-reverse
+        
+nav.#{$grid-container-name}
+    box-sizing: border-box
+    display: flex
+    justify-content: center
+    [class^=col-]
+        flex-basis: 20%
+        flex-grow: 0
+        margin: 0px
+        
+    
+.container
+    box-sizing: border-box
+    display: flex
+    justify-content: space-around
+    main
+        flex-basis: 60% 
+
+[class^=col-]
+    margin: $grid-gutter
+    box-sizing: border-box
+    background-color: rgba(0, 0, 0, .4)
+    padding: $grid-padding
+        
+/* Large Screen
+@media(min-width: #{$breakpoint-l})
+    .container main
+        flex-basis: 50%
+    @for $i from 1 to $grid-size+1
+        .#{$grid-col-name}-#{$grid-l-name}-#{$i}
+            flex-grow: $i
+
+/* Normal Screen
+@for $i from 1 to $grid-size+1
+    .#{$grid-col-name}-#{$i}
+        flex-grow: $i
+
+/* Medium Screen
+@media(max-width: #{$breakpoint-m})
+    .container main
+        flex-basis: 80%
+    @for $i from 1 to $grid-size+1
+        .#{$grid-col-name}-#{$grid-m-name}-#{$i}
+            flex-grow: $i
+
+/* Small Screen
+@media(max-width: #{$breakpoint-s})
+    .container main
+        flex-basis: 100%
+    [class^=col-]
+        flex: 0 0 100%
+        flex-grow: 0
+        margin-left: 0px
+    nav.#{$grid-container-name}
+        box-sizing: border-box
+        display: flex
+        flex-direction: column
+        [class^=col-]
+            margin: 0px
+    @for $i from 1 to $grid-size+1
+        .#{$grid-col-name}-#{$grid-s-name}-#{$i}
+            flex-grow: $i
+            flex: auto
+            margin: $grid-gutter
+            &:last-child
+                margin-right: 0px
+            &:first-child
+                margin-left: 0px

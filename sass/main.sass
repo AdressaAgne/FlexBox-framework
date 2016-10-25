@@ -63,7 +63,7 @@ nav.#{$grid-container-name}
     background-color: rgba(0, 0, 0, .4)
     padding: $grid-padding
         
-/* Large Screen
+// Large Screen
 @media(min-width: #{$breakpoint-l})
     .container main
         flex-basis: 50%
@@ -71,12 +71,12 @@ nav.#{$grid-container-name}
         .#{$grid-col-name}-#{$grid-l-name}-#{$i}
             flex-grow: $i
 
-/* Normal Screen
+// Normal Screen
 @for $i from 1 to $grid-size+1
     .#{$grid-col-name}-#{$i}
         flex-grow: $i
 
-/* Medium Screen
+// Medium Screen
 @media(max-width: #{$breakpoint-m})
     .container main
         flex-basis: 80%
@@ -84,7 +84,7 @@ nav.#{$grid-container-name}
         .#{$grid-col-name}-#{$grid-m-name}-#{$i}
             flex-grow: $i
 
-/* Small Screen
+// Small Screen
 @media(max-width: #{$breakpoint-s})
     .container main
         flex-basis: 100%
